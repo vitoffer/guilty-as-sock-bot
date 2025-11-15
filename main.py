@@ -14,103 +14,138 @@ BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 CASES = [
-    "Кто подложил котлету в чужой тапок?",
-    "Кто заменил весь шампунь в доме на соус для спагетти?",
-    "Кто научил попугая главного свидетеля кричать 'Свободу Тому Крузу!'?",
-    "Кто организовал подпольный рэйв в подвале, используя только стиральную машину и погремушки?",
-    "Кто нарисовал усы на всех портретах в семейной галерее?",
-    "Кто подменил сахар в сахарнице на соль, а соль в солонке на сахар?",
-    "Кто отправил соседу анонимное письмо с признанием в любви... от имени его же кота?",
-    "Кто переставил всю мебель в гостиной на 5 сантиметров влево?",
-    "Кто завел инстаграм-аккаунт домашнему кактусу и накрутил ему 10 тысяч подписчиков?",
-    "Кто подменил все зубные щётки в доме на новые... но уже использованные?",
-    "Кто заменил все семейные фото на мемы с котиками?",
-    "Кто научил голосового ассистента отвечать только рэпом?",
-    "Кто устроил марафон по просмотру сериалов на рабочем проекторе?",
-    "Кто переклеил все ценники в магазине на смешные?",
-    "Кто организовал флешмоб 'Обними случайного человека' в метро?"
+    "Уехал жить в лондон",
+    "Насрал в лоток кота",
+    "Отобрал у соседа слева носок и выставил на аукцион",
+    "Должен соседу справа наследство и не отдает",
+    "Обзывал Дуэйна Скалу Джонсона",
+    "Ушел в баню один и никого не позвал",
+    "Выкурил весь табак в Новосибирске",
+    "Разработал MAX",
+    "Не поставил лайк на видео с котиками",
+    "Переставил всю мебель в спальне на 5 см влево",
+    "Создал инсту домашнему кактусу и накрутил 10к подписчиков",
+    "Научил гпт отвечать только рэпом",
+    "Съел последнюю шаурму в холодильнике",
+    "Переименовал все контакты в телефоне на 'Серега заправщик'",
+    "Заменил все зеркала в доме на портреты себя",
+    "Научил попугая материться на трёх языках",
+    "Покрасил соседскую машину в коралловый",
+    "Заказал 100 пицц на чужой адрес",
+    "Создал фейковый профиль и начал встречаться сам с собой",
+    "Поставил на рингтон стон вомбата",
+    "Перевел все часы в доме на час назад",
+    "Подписал соседа на 50 рассылок про йогу",
+    "Съел чужой обед и оставил записку 'Было вкусно'",
+    "Запустил слух что отменили пятницу",
+    "Заменил фото в паспорте на фотку мактрахера",
+    "Продал NFT скриншота чужого мема",
+    "Организовал движение 'Ходить задом наперёд'",
+    "Заказал 500 резиновых уточек в универ",
 ]
 
 CHARACTERS = [
-    "Бывший циркач, ненавидящий беспорядок",
-    "Следователь, который верит только в теории заговора",
-    "Инспектор по качеству жизни",
-    "Спецагент под прикрытием в образе садовода",
-    "Учёный, изучающий природу глупости",
-    "Робот-полицейский из будущего",
-    "Обитатель параллельного измерения",
-    "Эксперт по этикету королевской семьи",
+    "Макан в армии",
+    "Гадалка в отставке"
+    "Непьющий пират",
+    "Тиктокер-философ",
+    "Фитнес модель с дипломом по квантовой физике",
+    "Ученый, изучающий природу тупости",
+    "Ярый поклонник теорий заговора",
+    "Робот доставщик Яндекса",
+    "Спецагент под прикрытием в образе мамы судьи",
+    "Эксперт по культуре свэга",
     "Охотник за привидениями",
-    "Шпион конкурентной фирмы бытовой химии",
-    "Астролог-детектив",
-    "Бывший профессиональный танцор",
-    "Коллекционер странных вещей",
-    "Философ-практик",
-    "Телепат-дилетант",
-    "Агент по недвижимости из космоса",
+    "Коллекционер дикпиков",
+    "Телепат неудачник",
+    "Агент по недвижимости на марсе",
     "Критик современного искусства",
-    "Бывший иллюзионист"
+    "Бывший ютубер с 5 подписчиками",
+    "Астролог который не верит в гороскопы",
+    "Веган который тайно ест шаурму",
+    "Геймер с психологическим образованием",
+    "Коуч по тайм-менеджменту который всегда опаздывает",
+    "Профессиональный прокрастинатор",
+    "Сомелье энергетиков",
+    "Эксперт по мемам при правительстве",
+    "Переводчик с собачьего на человеческий",
+    "Спидранер жизни",
+    "NFT-художник который не понимает что такое NFT",
+    "Специалист по древним мемам",
+    "Консультант по выбору носков",
+    "Профессиональный спорщик в интернете",
 ]
 
 WORDS = [
-    "Утка", "Носок", "Гравитация", "Инфлюенсер", "Майонез",
-    "Теория заговора", "Космос", "Бабушка", "Криптовалюта", "Ведро",
-    "Занавеска", "Любовь", "Робот", "Пришелец", "Подушка",
-    "Сковорода", "Велосипед", "Зубная фея", "Супергерой", "Ананас",
-    "Кофе", "Единорог", "Интернет", "Пицца", "Телепорт",
-    "Носорог", "Вафля", "Магнит", "Селфи", "Хомяк"
+	"Завоз", "Айсгергерт", "Банан", "Водка", "Лабуба",
+	"Скуф", "Стрим", "Хинкали", "Абстрактный", "Артефакт",
+	"Летопись", "Эволюция", "Книга", "Аллергия", "Бытие",
+	"Свобода", "Ответственность", "Торнадо", "Затмение",
+	"Радуга", "Портал", "Лабиринт", "Кристалл", "Моргенштерн",
+	"Зеркало", "Лес", "Звезда", "Часы", "Дождь", "Футбол",
+	"Утка", "Носок", "Гравитация", "Блогер", "Майонез",
+	"Теория заговора", "Космос", "Бабушка", "Крипта", "Ведро",
+	"Любовь", "Робот", "Подушка", "Пришелец", "Сковорода", "Велосипед",
+	"Зубная фея", "Супергерой", "Ананас", "Кофе", "Единорог", "Интернет",
+	"Пицца", "Телепорт", "Носорог", "Вафля", "Магнит", "Селфи", "Хомяк",
+  	"Джокер",  "Флекс", "Хайп", "Скам", "Абьюз""Буллинг", "Токсик",
+   	"Драма","Баг", "Дроп", "Лаг", "Скилл", "Читер", "Спидран", "Легенда",
+    "Борщ", "Шашлык", "Самогон", "Балалайка", "Медведь", "Ушанка",
 ]
 
 SECRET_GOALS = [
-    "Доказать, что преступление совершено из любви к искусству",
+    "Доказать, что преступление совершено по наивысшей тупости",
     "Обвинить в сговоре с инопланетянами",
     "Свалить всё на домашнее животное",
-    "Утверждать, что мотив — зависть к знаменитости",
-    "Настаивать, что это было ритуальное действо",
-    "Доказать, что преступник вдохновлялся детскими мультфильмами",
-    "Обвинить в попытке стать инфлюенсером",
+    "Утверждать, что мотив - зависть к знаменитости",
+    "Настаивать, что это был ритуал для вступления в ...",
+    "Доказать, что преступник вдохновлялся аниме",
+    "Обвинить в попытке стать инфоцыганом",
     "Утверждать, что это месть за старую обиду",
     "Связать преступление с лунными фазами",
-    "Доказать, что это был перформанс",
-    "Обвинить во влиянии ретроградного Меркурия",
-    "Доказать связь с тайным обществом",
     "Утверждать, что это социальный эксперимент",
     "Связать с квантовой физикой",
-    "Обвинить в зависимости от соцсетей"
+    "Обвинить в зависимости от инстаграма",
+    "Утверждать, что это было сделано ради популярности",
+    "Свалить на сбой в матрице",
+    "Настаивать что это часть тренда из тиктока",
+    "Связать с теорией плоской земли",
+    "Доказать что это было предсказано в симпсонах",
+    "Обвинить в том что хотел стать мемом",
+    "Утверждать что действовал по советам чатгпт",
+    "Утверждать что это было во сне",
+    "Доказать что виноват т9",
+    "Связать с кармой из прошлой жизни",
 ]
 
 CHAOS_CARDS = [
     "Новый свидетель! (указать на любого зрителя, он дает показания)",
-    "Всем замолчать и замереть на 30 секунд!",
+    "30 секунд никто не может говорить, только мычать!",
     "Обвиняемый плачет и хочет всё признать!",
-    "Улика найдена! (достать любой предмет со стола)",
+    "Улика найдена! (достать любой предмет)",
     "Адвокат подкуплен! (адвокат поддерживает обвинение 1 минуту)",
-    "В зале суда отключили свет! (все закрывают глаза)",
     "Свидетель обвинения меняет показания!",
-    "Обвиняемый достаёт вещдок!",
-    "Внезапный допрос присяжного!",
-    "Судья требует тишины!",
-    "Технические неполадки! (все говорят шепотом)",
-    "Вызов экстренного свидетеля!",
     "Прокурор забыл о чём говорил!",
-    "Адвокат требует перерыва!",
     "В зал врывается неизвестный!"
+    "Обвиняемый должен петь свои аргументы",
+    "Прокурор получает анонимку и меняет стратегию",
+    "Появляется эксперт (случайный зритель) и дает заключение",
+    "Кто-то из судебных чихает и все теряют мысль",
 ]
 
 SPECIAL_EFFECTS = [
-    "Все следующие 2 минуты говорите как пираты!",
+    "Все следующую минуту говорят как пираты!",
     "Обвиняемый может отвечать только 'Да' или 'Нет'",
     "Прокурор должен говорить с французским акцентом",
-    "Адвокат должен защищаться, стоя на стуле",
-    "Свидетель должен давать показания шепотом",
-    "Все должны говорить следующие 2 минуты как супергерои",
-    "Прокурор должен использовать в речи движения танца",
+    "Свидетель должен использовать в речи движения танца",
     "Адвокат должен ссылаться только на сказки",
-    "Все говорят в рифму!",
-    "Никто не может использовать букву 'О'",
-    "Все должны говорить медленно и драматично",
-    "Прокурор должен обвинять, как в детективном сериале",
-    "Адвокат защищается только цитатами из фильмов"
+    "Пафос в речи каждого +200",
+    "Адвокат защищается только мемами",
+    "Прокурор должен использовать научные термины",
+    "Обвиняемый может говорить только вопросами",
+    "Судья требует говорить максимально драматично",
+    "Адвокат защищает обвиняемого через философию",
+    "Прокурор обвиняет как политик на дебатах",
 ]
 
 ROLES = {
@@ -173,8 +208,20 @@ def init_db():
                   started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                   FOREIGN KEY (game_id) REFERENCES games(game_id))''')
 
+    c.execute('''CREATE TABLE IF NOT EXISTS group_games
+                 (game_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  chat_id INTEGER UNIQUE,
+                  admin_id INTEGER,
+                  players_count INTEGER DEFAULT 0,
+                  current_round INTEGER DEFAULT 0,
+                  total_rounds INTEGER DEFAULT 5,
+                  status TEXT DEFAULT 'setup',
+                  current_case TEXT,
+                  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+
     conn.commit()
     conn.close()
+
 
 # Генерация уникального кода игры (4 символа)
 def generate_game_code():
@@ -201,21 +248,487 @@ def save_user_display_name(user_id, display_name):
 @bot.message_handler(commands=['start'])
 def start_command(message):
     user_id = message.from_user.id
+    chat_id = message.chat.id
+    chat_type = message.chat.type
 
-    # Проверяем, есть ли сохранённое имя
+    # Если команда в группе - создаём игру в группе
+    if chat_type in ['group', 'supergroup']:
+        create_game_in_group(message)
+    else:
+        # Проверяем, есть ли параметр (например: /start group_123)
+        args = message.text.split()
+
+        display_name = get_user_display_name(user_id)
+
+        if not display_name:
+            # Если имени нет - сначала запрашиваем имя
+            bot.send_message(user_id,
+                "👋 Привет! Добро пожаловать в игру *'Судный День: Битва Носков'*!\n\n"
+                "Сначала представьтесь - как вас называть в игре?\n"
+                "_(Введите своё игровое имя)_",
+                parse_mode='Markdown'
+            )
+            # Передаем параметр дальше через register_next_step_handler
+            if len(args) > 1:
+                bot.register_next_step_handler(message, lambda m: process_user_name_with_param(m, args[1]))
+            else:
+                bot.register_next_step_handler(message, process_user_name)
+        else:
+            # Если имя уже есть - проверяем параметр
+            if len(args) > 1 and args[1].startswith('group_'):
+                # Автоматически присоединяем к групповой игре
+                game_id = int(args[1].split('_')[1])
+                auto_join_group_game(user_id, game_id, display_name)
+            else:
+                show_main_menu(user_id, display_name)
+
+def create_game_in_group(message):
+    chat_id = message.chat.id
+    admin_id = message.from_user.id
+
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    # Проверяем, есть ли активная игра в этой группе
+    c.execute("SELECT game_id, status FROM group_games WHERE chat_id = ?", (chat_id,))
+    existing = c.fetchone()
+
+    if existing and existing[1] != 'finished':
+        bot.send_message(chat_id, "❗️ В этой группе уже есть активная игра! Используйте /cancelgroup чтобы отменить её.")
+        conn.close()
+        return
+
+    # Создаем игру в группе
+    c.execute("INSERT INTO group_games (chat_id, admin_id) VALUES (?, ?)", (chat_id, admin_id))
+    game_id = c.lastrowid
+    conn.commit()
+    conn.close()
+
+    # Инициализируем в памяти с префиксом 'group_'
+    active_games[f'group_{game_id}'] = {
+        'admin_id': admin_id,
+        'chat_id': chat_id,
+        'players': [],
+        'status': 'setup',
+        'votes': {'guilty': 0, 'innocent': 0}
+    }
+
+    # Кнопка для присоединения
+    markup = types.InlineKeyboardMarkup()
+    bot_username = bot.get_me().username
+    btn_join = types.InlineKeyboardButton("➕ Я играю!", url=f"https://t.me/{bot_username}?start=group_{game_id}")
+    btn_start = types.InlineKeyboardButton("🎬 Начать раунд 1", callback_data=f"start_group_round_{game_id}")
+    markup.row(btn_join)
+    markup.row(btn_start)
+
+    debug_info = f"\n\n🔧 *Режим отладки* (мин. {MIN_PLAYERS} игроков)" if DEBUG_MODE else ""
+
+    bot.send_message(chat_id,
+        f"🎮 *СПИДРАН ПО СУДИМОСТИ*\n\n"
+        f"Игра создана в группе!\n\n"
+        f"👥 Нужно игроков: {MIN_PLAYERS}-{MAX_PLAYERS}\n"
+        f"📝 Присоединившихся: 0\n\n"
+        f"❗️ *ВАЖНО:* Перед тем как нажать кнопку, напишите боту в личку /start и представьтесь!\n\n"
+        f"Нажмите '➕ Я играю!' чтобы присоединиться!{debug_info}",
+        parse_mode='Markdown',
+        reply_markup=markup
+    )
+
+def join_group_game(call, game_id):
+    user_id = call.from_user.id
+    chat_id = call.message.chat.id
+
+    # Проверяем есть ли имя у пользователя
     display_name = get_user_display_name(user_id)
 
     if not display_name:
-        # Запрашиваем имя
-        bot.send_message(user_id,
-            "👋 Привет! Добро пожаловать в игру *'Судный День: Битва Носков'*!\n\n"
-            "Сначала представьтесь - как вас называть в игре?\n"
-            "_(Введите своё игровое имя)_",
-            parse_mode='Markdown'
+        bot.answer_callback_query(call.id,
+            "❗️ Сначала напишите мне в личку /start и представьтесь!",
+            show_alert=True)
+        return
+
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    c.execute("SELECT status, players_count FROM group_games WHERE game_id = ?", (game_id,))
+    game = c.fetchone()
+
+    if not game:
+        bot.answer_callback_query(call.id, "❗️ Игра не найдена", show_alert=True)
+        conn.close()
+        return
+
+    status, players_count = game
+
+    if status != 'setup':
+        bot.answer_callback_query(call.id, "❗️ Игра уже началась", show_alert=True)
+        conn.close()
+        return
+
+    if players_count >= MAX_PLAYERS:
+        bot.answer_callback_query(call.id, f"❗️ Игра полна ({MAX_PLAYERS} игроков)", show_alert=True)
+        conn.close()
+        return
+
+    # Проверяем, не добавлен ли уже
+    c.execute("SELECT player_id FROM players WHERE game_id = ? AND user_id = ?", (game_id, user_id))
+    if c.fetchone():
+        bot.answer_callback_query(call.id, "✅ Вы уже в игре!")
+        conn.close()
+        return
+
+    # Добавляем игрока
+    c.execute("INSERT INTO players (game_id, user_id, username, display_name) VALUES (?, ?, ?, ?)",
+              (game_id, user_id, '', display_name))
+    c.execute("UPDATE group_games SET players_count = players_count + 1 WHERE game_id = ?", (game_id,))
+
+    c.execute("SELECT players_count FROM group_games WHERE game_id = ?", (game_id,))
+    new_count = c.fetchone()[0]
+
+    # Получаем список всех игроков
+    c.execute("SELECT display_name FROM players WHERE game_id = ?", (game_id,))
+    all_players = c.fetchall()
+    players_list = ", ".join([p[0] for p in all_players])
+
+    conn.commit()
+    conn.close()
+
+    # Обновляем в памяти
+    if f'group_{game_id}' in active_games:
+        active_games[f'group_{game_id}']['players'].append({'user_id': user_id, 'display_name': display_name})
+
+    bot.answer_callback_query(call.id, f"✅ Вы присоединились как {display_name}!")
+
+    # Обновляем сообщение в группе
+    markup = types.InlineKeyboardMarkup()
+    btn_join = types.InlineKeyboardButton("➕ Я играю!", callback_data=f"join_group_{game_id}")
+    btn_start = types.InlineKeyboardButton("🎬 Начать раунд 1", callback_data=f"start_group_round_{game_id}")
+    markup.row(btn_join)
+    markup.row(btn_start)
+
+    try:
+        bot.edit_message_text(
+            chat_id=chat_id,
+            message_id=call.message.message_id,
+            text=f"🎮 *СУДНЫЙ ДЕНЬ: БИТВА НОСКОВ*\n\n"
+                 f"Игра создана в группе!\n\n"
+                 f"👥 Игроков: {new_count}/{MAX_PLAYERS}\n"
+                 f"📝 Присоединились: {players_list}\n\n"
+                 f"❗️ *ВАЖНО:* Новым игрокам нужно сначала написать боту /start в личку!\n\n"
+                 f"Когда все готовы - админ нажимает 'Начать раунд 1'",
+            parse_mode='Markdown',
+            reply_markup=markup
         )
-        bot.register_next_step_handler(message, process_user_name)
+    except:
+        pass
+
+    # Отправляем подтверждение в личку
+    try:
+        bot.send_message(user_id,
+            f"✅ Вы присоединились к групповой игре!\n"
+            f"👥 Игроков: {new_count}/{MAX_PLAYERS}\n\n"
+            f"Ожидайте начала раунда."
+        )
+    except:
+        pass
+
+def start_group_round(game_id, admin_id, chat_id):
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    # Проверяем права
+    c.execute("SELECT admin_id, players_count, current_round, total_rounds FROM group_games WHERE game_id = ?", (game_id,))
+    game = c.fetchone()
+
+    if not game:
+        conn.close()
+        return
+
+    db_admin_id, players_count, current_round, total_rounds = game
+
+    if db_admin_id != admin_id:
+        try:
+            bot.answer_callback_query(admin_id, "❗️ Только создатель игры может начать раунд", show_alert=True)
+        except:
+            pass
+        conn.close()
+        return
+
+    if players_count < MIN_PLAYERS:
+        try:
+            bot.send_message(chat_id, f"❗️ Недостаточно игроков! Нужно {MIN_PLAYERS}, есть: {players_count}")
+        except:
+            pass
+        conn.close()
+        return
+
+    # Обновляем раунд
+    new_round = current_round + 1
+    if new_round > total_rounds:
+        end_group_game(game_id, chat_id)
+        conn.close()
+        return
+
+    # Выбираем дело
+    case = random.choice(CASES)
+
+    c.execute("UPDATE group_games SET current_round = ?, status = 'playing', current_case = ? WHERE game_id = ?",
+              (new_round, case, game_id))
+
+    # Получаем игроков
+    c.execute("SELECT player_id, user_id, display_name FROM players WHERE game_id = ?", (game_id,))
+    players = c.fetchall()
+
+    # Раздаём роли
+    available_roles = ['judge', 'prosecutor', 'witness', 'lawyer', 'accused', 'journalist']
+    jury_count = max(0, len(players) - len(available_roles))
+    available_roles.extend(['jury'] * jury_count)
+
+    random.shuffle(available_roles)
+
+    # Сохраняем раунд
+    c.execute("INSERT INTO rounds (game_id, round_number, case_text) VALUES (?, ?, ?)",
+              (game_id, new_round, case))
+
+    # Раздаём карточки
+    roles_assignment = []
+    for i, (player_id, user_id, display_name) in enumerate(players):
+        role = available_roles[i]
+        c.execute("UPDATE players SET current_role = ? WHERE player_id = ?", (role, player_id))
+
+        roles_assignment.append(f"{ROLES[role]}: {display_name}")
+
+        # Отправляем карточки
+        try:
+            send_role_card(user_id, role, case, new_round, total_rounds)
+        except Exception as e:
+            print(f"Ошибка отправки карточки {display_name}: {e}")
+
+    conn.commit()
+
+    # Сброс голосов
+    if f'group_{game_id}' in active_games:
+        active_games[f'group_{game_id}']['votes'] = {'guilty': 0, 'innocent': 0}
+        active_games[f'group_{game_id}']['status'] = 'playing'
+
+    conn.close()
+
+    # Объявляем начало раунда в группе
+    markup = types.InlineKeyboardMarkup()
+    btn_end = types.InlineKeyboardButton("⏱ Закончить раунд", callback_data=f"end_group_round_{game_id}")
+    markup.add(btn_end)
+
+    time_info = f"{ROUND_TIME//60} мин" if ROUND_TIME >= 60 else f"{ROUND_TIME} сек"
+
+    bot.send_message(chat_id,
+        f"🎬 *РАУНД {new_round}/{total_rounds} НАЧАЛСЯ!*\n\n"
+        f"⚖️ *ДЕЛО:*\n_{case}_\n\n"
+        f"*РОЛИ:*\n" + "\n".join(roles_assignment) + "\n\n"
+        f"⏰ Рекомендованное время: {time_info}\n\n"
+        f"Карточки отправлены всем игрокам в личку.",
+        parse_mode='Markdown',
+        reply_markup=markup
+    )
+
+def end_group_round_voting(game_id, admin_id, chat_id):
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    c.execute("SELECT admin_id FROM group_games WHERE game_id = ?", (game_id,))
+    game = c.fetchone()
+
+    if not game or game[0] != admin_id:
+        try:
+            bot.send_message(chat_id, "❗️ Только создатель игры может завершить раунд")
+        except:
+            pass
+        conn.close()
+        return
+
+    # Получаем всех игроков с их ролями
+    c.execute("SELECT user_id, display_name, current_role FROM players WHERE game_id = ?", (game_id,))
+    players = c.fetchall()
+    conn.close()
+
+    # Отправляем голосование только ПРИСЯЖНЫМ
+    markup = types.InlineKeyboardMarkup(row_width=2)
+    btn_guilty = types.InlineKeyboardButton("✅ ВИНОВЕН", callback_data=f"vote_group_guilty_{game_id}")
+    btn_innocent = types.InlineKeyboardButton("❌ НЕ ВИНОВЕН", callback_data=f"vote_group_innocent_{game_id}")
+    markup.add(btn_guilty, btn_innocent)
+
+    voting_players = []
+    for user_id, display_name, role in players:
+        if role == 'jury':
+            voting_players.append(display_name)
+            try:
+                bot.send_message(user_id,
+                    "⏰ *ВРЕМЯ ГОЛОСОВАНИЯ!*\n\n"
+                    "👥 Вы - присяжный. Принимайте решение:",
+                    parse_mode='Markdown',
+                    reply_markup=markup
+                )
+            except:
+                pass
+
+    # Кнопка для показа результатов в группе
+    admin_markup = types.InlineKeyboardMarkup()
+    btn_show = types.InlineKeyboardButton("📊 Показать результаты", callback_data=f"show_group_results_{game_id}")
+    admin_markup.add(btn_show)
+
+    voters_list = ", ".join(voting_players) if voting_players else "нет присяжных"
+
+    bot.send_message(chat_id,
+        f"⏰ *ГОЛОСОВАНИЕ!*\n\n"
+        f"👥 Голосуют присяжные: {voters_list}\n\n"
+        f"Когда все проголосуют - админ нажимает кнопку ниже:",
+        parse_mode='Markdown',
+        reply_markup=admin_markup
+    )
+
+
+def show_group_results(game_id, chat_id):
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    if f'group_{game_id}' not in active_games:
+        active_games[f'group_{game_id}'] = {'votes': {'guilty': 0, 'innocent': 0}}
+
+    votes = active_games[f'group_{game_id}']['votes']
+    guilty_votes = votes.get('guilty', 0)
+    innocent_votes = votes.get('innocent', 0)
+
+    if guilty_votes > innocent_votes:
+        verdict = "ВИНОВЕН"
+        winner_team = "prosecution"
+        emoji = "⚖️"
+    elif innocent_votes > guilty_votes:
+        verdict = "НЕ ВИНОВЕН"
+        winner_team = "defense"
+        emoji = "🎉"
     else:
-        show_main_menu(user_id, display_name)
+        verdict = "НИЧЬЯ"
+        winner_team = "tie"
+        emoji = "🤝"
+
+    # Обновляем очки
+    if winner_team == "prosecution":
+        c.execute("""UPDATE players SET score = score + 2
+                     WHERE game_id = ? AND current_role IN ('prosecutor', 'witness', 'judge')""",
+                  (game_id,))
+    elif winner_team == "defense":
+        c.execute("""UPDATE players SET score = score + 2
+                     WHERE game_id = ? AND current_role IN ('lawyer', 'accused')""",
+                  (game_id,))
+
+    c.execute("""UPDATE rounds SET winner_team = ?
+                 WHERE game_id = ? AND round_number = (SELECT current_round FROM group_games WHERE game_id = ?)""",
+              (winner_team, game_id, game_id))
+
+    c.execute("SELECT current_round, total_rounds FROM group_games WHERE game_id = ?", (game_id,))
+    current_round, total_rounds = c.fetchone()
+
+    conn.commit()
+    conn.close()
+
+    # Сброс голосов
+    active_games[f'group_{game_id}']['votes'] = {'guilty': 0, 'innocent': 0}
+
+    # Результаты
+    result_text = (
+        f"{emoji} *ВЕРДИКТ: {verdict}!*\n\n"
+        f"📊 Голосов 'Виновен': {guilty_votes}\n"
+        f"📊 Голосов 'Не виновен': {innocent_votes}\n\n"
+    )
+
+    if winner_team != "tie":
+        result_text += f"✨ Команда {'обвинения' if winner_team == 'prosecution' else 'защиты'} получает +2 очка!"
+    else:
+        result_text += "🤝 Ничья! Очки не начисляются."
+
+    # Кнопки для следующего раунда
+    markup = types.InlineKeyboardMarkup(row_width=1)
+
+    if current_round < total_rounds:
+        btn_next = types.InlineKeyboardButton(f"➡️ Начать раунд {current_round + 1}", callback_data=f"start_group_round_{game_id}")
+        btn_end = types.InlineKeyboardButton("🏁 Завершить игру", callback_data=f"end_group_game_{game_id}")
+        markup.add(btn_next, btn_end)
+
+        bot.send_message(chat_id,
+            result_text + f"\n\n📊 Раунд {current_round}/{total_rounds} завершён.",
+            parse_mode='Markdown',
+            reply_markup=markup
+        )
+    else:
+        end_group_game(game_id, chat_id)
+
+
+def end_group_game(game_id, chat_id):
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    c.execute("SELECT display_name, score FROM players WHERE game_id = ? ORDER BY score DESC", (game_id,))
+    players = c.fetchall()
+
+    c.execute("UPDATE group_games SET status = 'finished' WHERE game_id = ?", (game_id,))
+    conn.commit()
+    conn.close()
+
+    if players:
+        leaderboard = "\n".join([f"{i+1}. {p[0]}: {p[1]} 🏆" for i, p in enumerate(players)])
+        winner = players[0]
+
+        result_text = (
+            f"🏆 *ИГРА ЗАВЕРШЕНА!*\n\n"
+            f"*ИТОГОВАЯ ТАБЛИЦА:*\n{leaderboard}\n\n"
+            f"🎉 *ПОБЕДИТЕЛЬ: {winner[0]}* с {winner[1]} очками!\n\n"
+            f"Спасибо за игру!"
+        )
+
+        bot.send_message(chat_id, result_text, parse_mode='Markdown')
+
+    # Удаляем из памяти
+    if f'group_{game_id}' in active_games:
+        del active_games[f'group_{game_id}']
+
+@bot.message_handler(commands=['cancelgroup'])
+def cancel_group_command(message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id
+    chat_type = message.chat.type
+
+    if chat_type not in ['group', 'supergroup']:
+        bot.send_message(user_id, "❗️ Эта команда работает только в группах")
+        return
+
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    c.execute("SELECT game_id, admin_id FROM group_games WHERE chat_id = ? AND status != 'finished'", (chat_id,))
+    game = c.fetchone()
+
+    if not game:
+        bot.send_message(chat_id, "❗️ Нет активной игры в этой группе")
+        conn.close()
+        return
+
+    game_id, admin_id = game
+
+    if admin_id != user_id:
+        bot.send_message(chat_id, "❗️ Только создатель игры может её отменить")
+        conn.close()
+        return
+
+    c.execute("DELETE FROM players WHERE game_id = ?", (game_id,))
+    c.execute("DELETE FROM rounds WHERE game_id = ?", (game_id,))
+    c.execute("DELETE FROM group_games WHERE game_id = ?", (game_id,))
+    conn.commit()
+    conn.close()
+
+    if f'group_{game_id}' in active_games:
+        del active_games[f'group_{game_id}']
+
+    bot.send_message(chat_id, "✅ Групповая игра отменена.")
+
 
 def process_user_name(message):
     user_id = message.from_user.id
@@ -230,6 +743,85 @@ def process_user_name(message):
     bot.send_message(user_id, f"✅ Отлично, {display_name}!")
     show_main_menu(user_id, display_name)
 
+def process_user_name_with_param(message, param):
+    """Обработка имени с последующим автоприсоединением"""
+    user_id = message.from_user.id
+    display_name = message.text.strip()[:30]
+
+    if len(display_name) < 2:
+        bot.send_message(user_id, "❗️ Имя слишком короткое. Введите минимум 2 символа:")
+        bot.register_next_step_handler(message, lambda m: process_user_name_with_param(m, param))
+        return
+
+    save_user_display_name(user_id, display_name)
+    bot.send_message(user_id, f"✅ Отлично, {display_name}!")
+
+    # Автоматически присоединяем к игре
+    if param.startswith('group_'):
+        game_id = int(param.split('_')[1])
+        auto_join_group_game(user_id, game_id, display_name)
+
+
+def auto_join_group_game(user_id, game_id, display_name):
+    """Автоматическое присоединение к групповой игре"""
+    conn = sqlite3.connect('judgment_day.db', check_same_thread=False)
+    c = conn.cursor()
+
+    c.execute("SELECT chat_id, status, players_count FROM group_games WHERE game_id = ?", (game_id,))
+    game = c.fetchone()
+
+    if not game:
+        bot.send_message(user_id, "❗️ Игра не найдена или уже завершена")
+        conn.close()
+        return
+
+    chat_id, status, players_count = game
+
+    if status != 'setup':
+        bot.send_message(user_id, "❗️ Игра уже началась")
+        conn.close()
+        return
+
+    if players_count >= MAX_PLAYERS:
+        bot.send_message(user_id, f"❗️ Игра полна ({MAX_PLAYERS} игроков)")
+        conn.close()
+        return
+
+    # Проверяем, не добавлен ли уже
+    c.execute("SELECT player_id FROM players WHERE game_id = ? AND user_id = ?", (game_id, user_id))
+    if c.fetchone():
+        bot.send_message(user_id, "✅ Вы уже в этой игре!")
+        conn.close()
+        return
+
+    # Добавляем игрока
+    c.execute("INSERT INTO players (game_id, user_id, username, display_name) VALUES (?, ?, ?, ?)",
+              (game_id, user_id, '', display_name))
+    c.execute("UPDATE group_games SET players_count = players_count + 1 WHERE game_id = ?", (game_id,))
+
+    c.execute("SELECT players_count FROM group_games WHERE game_id = ?", (game_id,))
+    new_count = c.fetchone()[0]
+
+    conn.commit()
+    conn.close()
+
+    # Обновляем в памяти
+    if f'group_{game_id}' in active_games:
+        active_games[f'group_{game_id}']['players'].append({'user_id': user_id, 'display_name': display_name})
+
+    bot.send_message(user_id,
+        f"✅ Вы автоматически присоединились к игре!\n"
+        f"👥 Игроков: {new_count}/{MAX_PLAYERS}\n\n"
+        f"Ожидайте начала раунда.",
+        parse_mode='Markdown'
+    )
+
+    # Уведомляем группу
+    try:
+        bot.send_message(chat_id, f"➕ *{display_name}* присоединился к игре! ({new_count}/{MAX_PLAYERS})", parse_mode='Markdown')
+    except:
+        pass
+
 def show_main_menu(user_id, display_name):
     # Reply клавиатура (постоянная внизу)
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
@@ -240,7 +832,7 @@ def show_main_menu(user_id, display_name):
     markup.add(btn_create, btn_join, btn_status, btn_cancel)
 
     bot.send_message(user_id,
-        f"🎮 *СУДНЫЙ ДЕНЬ: БИТВА НОСКОВ*\n\n"
+        f"🎮 *СПИДРАН ПО СУДИМОСТИ*\n\n"
         f"Ваше имя: *{display_name}*\n\n"
         f"Используйте кнопки ниже для управления:",
         parse_mode='Markdown',
@@ -309,6 +901,41 @@ def callback_handler(call):
         bot.answer_callback_query(call.id)
         game_id = int(call.data.split("_")[2])
         end_game(game_id, user_id)
+
+    elif call.data.startswith("join_group_"):
+        game_id = int(call.data.split("_")[2])
+        join_group_game(call, game_id)
+
+    elif call.data.startswith("start_group_round_"):
+        bot.answer_callback_query(call.id)
+        game_id = int(call.data.split("_")[3])
+        start_group_round(game_id, user_id, call.message.chat.id)
+
+    elif call.data.startswith("end_group_round_"):
+        bot.answer_callback_query(call.id)
+        game_id = int(call.data.split("_")[3])
+        end_group_round_voting(game_id, user_id, call.message.chat.id)
+
+    elif call.data.startswith("vote_group_"):
+        bot.answer_callback_query(call.id, "✅ Голос учтён!")
+        game_id = int(call.data.split("_")[3])
+        vote_type = call.data.split("_")[2]  # guilty или innocent
+
+        if f'group_{game_id}' not in active_games:
+            active_games[f'group_{game_id}'] = {'votes': {'guilty': 0, 'innocent': 0}}
+
+        active_games[f'group_{game_id}']['votes'][vote_type] += 1
+        bot.send_message(user_id, f"✅ Ваш голос '{vote_type.upper()}' учтён!")
+
+    elif call.data.startswith("show_group_results_"):
+        bot.answer_callback_query(call.id)
+        game_id = int(call.data.split("_")[3])
+        show_group_results(game_id, call.message.chat.id)
+
+    elif call.data.startswith("end_group_game_"):
+        bot.answer_callback_query(call.id)
+        game_id = int(call.data.split("_")[3])
+        end_group_game(game_id, call.message.chat.id)
 
 # Создание игры
 def create_game(admin_id, display_name, message):
@@ -547,13 +1174,12 @@ def start_round(game_id, admin_id):
 # Отправка карточки роли
 def send_role_card(user_id, role, case, round_num, total_rounds):
     if role == 'judge':
-        effects = random.sample(SPECIAL_EFFECTS, min(2, len(SPECIAL_EFFECTS)))
+        effect = random.choice(SPECIAL_EFFECTS)
         text = (
             f"🎬 *РАУНД {round_num}/{total_rounds}*\n\n"
             f"🤵 *ВЫ - СУДЬЯ!*\n\n"
             f"⚖️ *ДЕЛО:*\n_{case}_\n\n"
-            f"🎭 *СПЕЦЭФФЕКТЫ (используйте в любой момент):*\n"
-            + "\n".join([f"• {eff}" for eff in effects]) + "\n\n"
+            f"🎭 *СПЕЦЭФФЕКТ (используйте в любой момент):* {effect}\n"
             f"💡 Ваша задача: вести процесс и объявить вердикт!"
         )
 
@@ -574,7 +1200,6 @@ def send_role_card(user_id, role, case, round_num, total_rounds):
     elif role == 'witness':
         character = random.choice(CHARACTERS)
         word = random.choice(WORDS)
-        goal = random.choice(SECRET_GOALS)
         text = (
             f"🎬 *РАУНД {round_num}/{total_rounds}*\n\n"
             f"🕵️ *ВЫ - СВИДЕТЕЛЬ ОБВИНЕНИЯ!*\n\n"
@@ -602,7 +1227,6 @@ def send_role_card(user_id, role, case, round_num, total_rounds):
     elif role == 'accused':
         character = random.choice(CHARACTERS)
         word = random.choice(WORDS)
-        goal = random.choice(SECRET_GOALS)
         text = (
             f"🎬 *РАУНД {round_num}/{total_rounds}*\n\n"
             f"😎 *ВЫ - ОБВИНЯЕМЫЙ!*\n\n"
@@ -614,13 +1238,12 @@ def send_role_card(user_id, role, case, round_num, total_rounds):
         )
 
     elif role == 'journalist':
-        chaos = random.sample(CHAOS_CARDS, min(2, len(CHAOS_CARDS)))
+        chaos = random.choice(CHAOS_CARDS)
         text = (
             f"🎬 *РАУНД {round_num}/{total_rounds}*\n\n"
             f"📢 *ВЫ - ЖУРНАЛИСТ!*\n\n"
             f"⚖️ *ДЕЛО:* _{case}_\n\n"
-            f"💥 *КАРТЫ БАБАХ!:*\n"
-            + "\n".join([f"• {ch}" for ch in chaos]) + "\n\n"
+            f"💥 *КАРТА БАБАХ!:* {chaos}\n"
             f"💡 Создавайте хаос в любой момент!"
         )
 
@@ -1005,7 +1628,7 @@ def next_round_callback(call):
 # Запуск бота
 if __name__ == '__main__':
     print("=" * 50)
-    print("🎮 Бот 'Судный День: Битва Носков' запущен!")
+    print("🎮 Бот запущен!")
     print("=" * 50)
 
     if DEBUG_MODE:
